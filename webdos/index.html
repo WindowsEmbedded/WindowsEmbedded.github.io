@@ -12,10 +12,15 @@
             if(ev.keyCode==13){
               if(document.getElementById("inputer").value.split(" ")[0] == "print"){
                 for(i=1;i<document.getElementById("inputer").value.split(" ").length;i++){
-                  document.getElementById("con").innerHTML = document.getElementById("con").innerHTML + document.getElementById("inputer").value.split(" ")[i].replace("$VER;","0.01")+ " ";
+                  document.getElementById("con").innerHTML = document.getElementById("con").innerHTML + document.getElementById("inputer").value.split(" ")[i].replace("$VER;","0.1")+ " ";
                 }
                 document.getElementById("con").innerHTML = document.getElementById("con").innerHTML + "<br>"
 
+              }else if(document.getElementById("inputer").value.split(" ")[0] == "clear" ||
+               document.getElementById("inputer").value.split(" ")[0] == "cls"){
+                document.getElementById("con").innerHTML = ""
+              }else{
+                document.getElementById("con").innerHTML = document.getElementById("con").innerHTML + "Unknown Command";
               }
               document.getElementById("inputer").value = ""
             }
