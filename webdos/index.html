@@ -8,17 +8,20 @@
         <title>Web DOS v0</title>
         <script src="./res/js/syskrnl.js" type="text/javascript"></script>
         <script type="text/javascript">
+          import {main} from "./apps/example.js"
           document.onkeypress = function(ev){
             if(ev.keyCode==13){
               if(document.getElementById("inputer").value.split(" ")[0] == "print"){
                 for(i=1;i<document.getElementById("inputer").value.split(" ").length;i++){
-                  document.getElementById("con").innerHTML = document.getElementById("con").innerHTML + document.getElementById("inputer").value.split(" ")[i].replace("$VER;","0.1")+ " ";
+                  document.getElementById("con").innerHTML = document.getElementById("con").innerHTML + document.getElementById("inputer").value.split(" ")[i].replace("$VER;","0.12")+ " ";
                 }
                 document.getElementById("con").innerHTML = document.getElementById("con").innerHTML + "<br>"
 
               }else if(document.getElementById("inputer").value.split(" ")[0] == "clear" ||
                document.getElementById("inputer").value.split(" ")[0] == "cls"){
                 document.getElementById("con").innerHTML = ""
+              }else if(document.getElementById("inputer").value.split(" ")[0] == "example"){
+                main()
               }else{
                 document.getElementById("con").innerHTML = document.getElementById("con").innerHTML + "Unknown Command";
               }
@@ -54,6 +57,9 @@
               font-family: consolas;
               width:1000px;
               ">
+        </div>
+        <div class="help" style="display:none">
+          
         </div>
         
     </body>
