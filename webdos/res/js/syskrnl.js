@@ -1,5 +1,4 @@
-sys16 = {}
-sys16.sysfunc = {}
-sys16.sysfunc.test = function(){
-    alert("test")
+
+export default printcons = function(text){
+    document.getElementById("con").innerHTML = document.getElementById("con").innerHTML + text+ "\n";
 }

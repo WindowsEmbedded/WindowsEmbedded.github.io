@@ -1,4 +1,4 @@
-function main(){
-    alert("Hello! This is a example apps");
-    alert("")
+import {printcons} from "../res/js/syskrnl.js"
+main = function(){
+    alert("msg")
 }
